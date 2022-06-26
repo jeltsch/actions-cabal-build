@@ -30,7 +30,8 @@ runs:
         if [ "$failure_ghc_versions" ]
         then
           echo 'The following versions of GHC' \
-               "could not build the package: $failure_ghc_versions" \
+               'could not build the package:' \
+               "$failure_ghc_versions" \
                >&2
           exit 1
         fi
