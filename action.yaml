@@ -17,7 +17,11 @@ runs:
         for ghc_version in $ghc_versions
         do
           ghcup run --install --ghc $ghc_version -- cabal build ||
-          failure_ghc_versions="$failure_ghc_versions $ghc_version"
+          if [ ! "$failure_ghc_versions" ]
+          then
+            failure_ghc_versions=$ghc_version
+          else
+            failure_ghc_versions="$failure_ghc_versions, $ghc_version"
         done
         if [ "$failure_ghc_versions" ]
         then
