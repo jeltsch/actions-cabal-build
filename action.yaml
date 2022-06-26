@@ -1,12 +1,15 @@
 name: 'Build Cabal package'
+author: 'Wolfgang Jeltsch'
 description: 'GitHub action for building Cabal packages'
 runs:
   using: composite
   steps:
-    - run: |
-        cabal update
+    - name: 'Get package information'
       shell: sh
-    - run: |
+      run: cabal update
+    - name: 'Actually build the package'
+      shell: sh
+      run: |
         ghc_versions=$(sed -ne '
           /^tested-with:/ {
             s/^tested-with:  *GHC == { \(.*\) }$/\1/
@@ -31,4 +34,3 @@ runs:
                >&2
           exit 1
         fi
-      shell: sh
