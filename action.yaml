@@ -5,8 +5,7 @@ runs:
   using: composite
   steps:
     - name: 'Get package information'
-      run: |
-        cabal update
+      run: cabal update
       shell: sh
     - name: 'Actually build the package'
       run: |
