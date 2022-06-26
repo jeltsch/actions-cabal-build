@@ -5,9 +5,10 @@ runs:
   using: composite
   steps:
     - name: 'Get package information'
-      run: cabal update
       shell: sh
+      run: cabal update
     - name: 'Actually build the package'
+      shell: sh
       run: |
         ghc_versions=$(sed -ne '
           /^tested-with:/ {
@@ -33,4 +34,3 @@ runs:
                >&2
           exit 1
         fi
-      shell: sh
