@@ -22,6 +22,7 @@ runs:
             failure_ghc_versions=$ghc_version
           else
             failure_ghc_versions="$failure_ghc_versions, $ghc_version"
+          fi
         done
         if [ "$failure_ghc_versions" ]
         then
