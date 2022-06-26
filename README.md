@@ -16,7 +16,7 @@ description.
 Usage
 -----
 
-This actions has neither inputs nor outputs. It just expects the Cabal
+This action has neither inputs nor outputs. It just expects the Cabal
 package to build in `$GITHUB_WORKSPACE`.
 
 You need to have [GHCup][ghcup] installed. GitHub’s `ubuntu-latest`
