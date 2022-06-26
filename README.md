@@ -21,7 +21,7 @@ package to build in `$GITHUB_WORKSPACE`.
 
 You need to have [GHCup][ghcup] installed. GitHub’s `ubuntu-latest`
 runner contains it, but you might have to install it yourself when using
-other runners or a container.
+a different runner or a container.
 
 [ghcup]:
     https://www.haskell.org/ghcup/
