@@ -1,4 +1,5 @@
 name: 'Build Cabal package'
+author: 'Wolfgang Jeltsch'
 description: 'GitHub action for building Cabal packages'
 runs:
   using: composite
