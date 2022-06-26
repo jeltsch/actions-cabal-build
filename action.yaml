@@ -4,10 +4,12 @@ description: 'GitHub action for building Cabal packages'
 runs:
   using: composite
   steps:
-    - run: |
+    - name: 'Get package information'
+      run: |
         cabal update
       shell: sh
-    - run: |
+    - name: 'Actually build the package'
+      run: |
         ghc_versions=$(sed -ne '
           /^tested-with:/ {
             s/^tested-with:  *GHC == { \(.*\) }$/\1/
